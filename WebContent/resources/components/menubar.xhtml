@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+>
+
+<!--  xmlns:p="http://primefaces.prime.com.tr/ui" -->
+
+<composite:interface />
+<composite:implementation>
+	<h:form>
+
+
+		<p:menubar autoSubmenuDisplay="true">
+			<p:menuitem value="Home" url="/" />
+			<p:submenu label="Cadastros" icon="ui-icon ui-icon-document">
+				<p:menuitem value="Pessoas" url="/fcls/pessoa/pessoas.xhtml" />
+				<p:menuitem value="Projetos" url="/fcls/projeto/projetos.xhtml" />
+				<p:menuitem value="Comercios" url="/fcls/comercio/comercios.xhtml" />
+			</p:submenu>
+		</p:menubar>
+
+	</h:form>
+</composite:implementation>
+
+
+</html>
