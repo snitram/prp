@@ -3,7 +3,7 @@ package br.adm.martins.prp.controller;
 import java.util.List;
 import java.util.Map;
 
-public interface GenericService {
+public interface GenericPersistenceService {
 
 	public <T> T create(T t);
 

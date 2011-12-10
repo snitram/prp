@@ -23,7 +23,7 @@ import javax.persistence.Query;
 @Stateless
 //@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 @SuppressWarnings("all")
-public class GenericServiceJPA implements GenericService, Serializable {
+public class GenericPersistenceServiceJPA implements GenericPersistenceService, Serializable {
    
     
 	@PersistenceContext
