@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import org.apache.log4j.Logger;
 
 
 /**
@@ -60,25 +61,25 @@ public class GenericPersistenceServiceJPA implements GenericPersistenceService, 
      }    
     
 
-    public <T> T update(T t) {
-        log.info("update object: " + t.getClass().getSimpleName());    	
-        return this.em.merge(t);
+    public <T> T update(T type) {
+        log.info("update object: " + type.getClass().getSimpleName());    	
+        return this.em.merge(type);
     }
     
-    @Override
-    public <E> List<E> findAll(E type) {
+    public <T> List<T> findAll(Class type) {
     	log.info("retrive all " + type.getClass().getSimpleName());
 		final Query query = this.em.createQuery("from " + type.getClass().getSimpleName());
-		List<E> list = query.getResultList();
+		List<T> list = query.getResultList();
 //		list = this.entityManager.createNamedQuery(this.entityClass.getSimpleName() + ".selectAll").getResultList();
         if (list == null) {
-                list = new ArrayList<E>();
+                list = new ArrayList<T>();
         }
         return list;
     	
     }
     
     public <T> List<T> findWithNamedQuery(String namedQueryName){
+    	log.debug("findWithNamedQuery: " + namedQueryName);
         return this.em.createNamedQuery(namedQueryName).getResultList();
     }
     

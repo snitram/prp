@@ -15,7 +15,7 @@ public interface GenericPersistenceService {
 
 	public <T> void delete(T type);
 
-	public <T> List<T> findAll(T type);
+	public <T> List<T> findAll(Class type);
 	
 	public <T> List<T> findWithNamedQuery(String queryName);
 

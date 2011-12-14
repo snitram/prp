@@ -17,6 +17,9 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
-	
-	
+
+	<lifecycle>
+		<phase-listener>br.adm.martins.prp.util.LifeCycleListener</phase-listener>
+	</lifecycle>
+
 </faces-config>
